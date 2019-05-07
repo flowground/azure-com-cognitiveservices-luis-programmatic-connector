@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        },
+        "versionId": {
+            "required": true,
+            "type": "string"
+        },
+        "prebuiltId": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        }
+    }
+}

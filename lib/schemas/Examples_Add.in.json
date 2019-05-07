@@ -1,0 +1,66 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        },
+        "versionId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "A labeled example.",
+            "example": {
+                "entityLabels": [
+                    {
+                        "endCharIndex": 34,
+                        "entityName": "Place",
+                        "startCharIndex": 21
+                    }
+                ],
+                "intentName": "WeatherInPlace",
+                "text": "whats the weather in buenos aires?"
+            },
+            "properties": {
+                "entityLabels": {
+                    "description": "The idenfied entities within the utterance.",
+                    "items": {
+                        "type": "object",
+                        "description": "Defines the entity type and position of the extracted entity within the example.",
+                        "properties": {
+                            "endCharIndex": {
+                                "description": "The index within the utterance where the extracted entity ends.",
+                                "type": "integer"
+                            },
+                            "entityName": {
+                                "description": "The entity type.",
+                                "type": "string"
+                            },
+                            "startCharIndex": {
+                                "description": "The index within the utterance where the extracted entity starts.",
+                                "type": "integer"
+                            }
+                        },
+                        "required": [
+                            "entityName",
+                            "startCharIndex",
+                            "endCharIndex"
+                        ]
+                    },
+                    "type": "array"
+                },
+                "intentName": {
+                    "description": "The idenfitied intent representing the utterance.",
+                    "type": "string"
+                },
+                "text": {
+                    "description": "The sample's utterance.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

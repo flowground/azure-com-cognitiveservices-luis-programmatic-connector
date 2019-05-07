@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        },
+        "versionId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Objet model for adding a prebuilt entity to the application.",
+            "example": [
+                "number",
+                "ordinal"
+            ],
+            "items": {
+                "type": "string"
+            },
+            "type": "array"
+        }
+    }
+}

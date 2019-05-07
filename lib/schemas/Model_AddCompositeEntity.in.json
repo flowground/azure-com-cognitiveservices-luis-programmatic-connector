@@ -1,0 +1,38 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        },
+        "versionId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "A composite entity.",
+            "example": {
+                "children": [
+                    "Class",
+                    "Location"
+                ],
+                "name": "Reservation"
+            },
+            "properties": {
+                "children": {
+                    "description": "Child entities.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "name": {
+                    "description": "Entity name.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        },
+        "versionId": {
+            "required": true,
+            "type": "string"
+        },
+        "clEntityId": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        },
+        "subListId": {
+            "required": true,
+            "type": "integer"
+        },
+        "requestBody": {
+            "description": "Object model for updating one of the closed list's sublists.",
+            "example": {
+                "canonicalForm": "California",
+                "list": [
+                    "California",
+                    "CA",
+                    "Calif.",
+                    "Cal."
+                ]
+            },
+            "properties": {
+                "canonicalForm": {
+                    "description": "The standard form that the list represents.",
+                    "type": "string"
+                },
+                "list": {
+                    "description": "List of synonym words.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

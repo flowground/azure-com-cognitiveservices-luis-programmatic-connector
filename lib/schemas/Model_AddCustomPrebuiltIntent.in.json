@@ -1,0 +1,32 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        },
+        "versionId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "A model object containing the name of the custom prebuilt intent or entity and the name of the domain to which this model belongs.",
+            "example": {
+                "domainName": "Camera",
+                "modelName": "AppName"
+            },
+            "properties": {
+                "domainName": {
+                    "description": "The domain name.",
+                    "type": "string"
+                },
+                "modelName": {
+                    "description": "The intent name or entity name.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

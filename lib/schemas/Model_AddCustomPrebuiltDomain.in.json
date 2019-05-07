@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        },
+        "versionId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "A model object containing the name of the custom prebuilt entity and the name of the domain to which this model belongs.",
+            "example": {
+                "domainName": "Camera"
+            },
+            "properties": {
+                "domainName": {
+                    "description": "The domain name.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

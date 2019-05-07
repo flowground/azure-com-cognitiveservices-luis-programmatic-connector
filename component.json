@@ -1,0 +1,1687 @@
+{
+    "title": "LUIS Programmatic",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/azure.com/cognitiveservices-LUIS-Programmatic/v2.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://azure.local/luis/api/v2.0",
+                    "{AzureRegion}.api.cognitive.microsoft.com",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "apiKeyHeader": {
+                "label": "Ocp-Apim-Subscription-Key (apiKeyHeader)",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "Apps_List": {
+            "main": "./lib/actions/Apps_List.js",
+            "title": "Lists all of the user applications.",
+            "description": "Lists all of the user applications.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Apps_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Apps_Add": {
+            "main": "./lib/actions/Apps_Add.js",
+            "title": "Creates a new LUIS app.",
+            "description": "Creates a new LUIS app.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Apps_Add.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Apps_ListCortanaEndpoints": {
+            "main": "./lib/actions/Apps_ListCortanaEndpoints.js",
+            "title": "Gets the endpoint URLs for the prebuilt Cortana applications.",
+            "description": "Gets the endpoint URLs for the prebuilt Cortana applications.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Apps_ListCortanaEndpoints.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Apps_ListSupportedCultures": {
+            "main": "./lib/actions/Apps_ListSupportedCultures.js",
+            "title": "Gets the supported application cultures.",
+            "description": "Gets the supported application cultures.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Apps_ListSupportedCultures.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Apps_ListAvailableCustomPrebuiltDomains": {
+            "main": "./lib/actions/Apps_ListAvailableCustomPrebuiltDomains.js",
+            "title": "Gets all the available custom prebuilt domains for all cultures.",
+            "description": "Gets all the available custom prebuilt domains for all cultures.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Apps_ListAvailableCustomPrebuiltDomains.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Apps_AddCustomPrebuiltDomain": {
+            "main": "./lib/actions/Apps_AddCustomPrebuiltDomain.js",
+            "title": "Adds a prebuilt domain along with its models as a new application.",
+            "description": "Adds a prebuilt domain along with its models as a new application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Apps_AddCustomPrebuiltDomain.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Apps_ListAvailableCustomPrebuiltDomainsForCulture": {
+            "main": "./lib/actions/Apps_ListAvailableCustomPrebuiltDomainsForCulture.js",
+            "title": "Gets all the available custom prebuilt domains for a specific culture.",
+            "description": "Gets all the available custom prebuilt domains for a specific culture.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Apps_ListAvailableCustomPrebuiltDomainsForCulture.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Apps_ListDomains": {
+            "main": "./lib/actions/Apps_ListDomains.js",
+            "title": "Gets the available application domains.",
+            "description": "Gets the available application domains.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Apps_ListDomains.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Apps_Import": {
+            "main": "./lib/actions/Apps_Import.js",
+            "title": "Imports an application to LUIS, the application's structure should be included in in the request body.",
+            "description": "Imports an application to LUIS, the application's structure should be included in in the request body.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Apps_Import.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Apps_ListUsageScenarios": {
+            "main": "./lib/actions/Apps_ListUsageScenarios.js",
+            "title": "Gets the application available usage scenarios.",
+            "description": "Gets the application available usage scenarios.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Apps_ListUsageScenarios.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Apps_Delete": {
+            "main": "./lib/actions/Apps_Delete.js",
+            "title": "Deletes an application.",
+            "description": "Deletes an application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Apps_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Apps_Get": {
+            "main": "./lib/actions/Apps_Get.js",
+            "title": "Gets the application info.",
+            "description": "Gets the application info.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Apps_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Apps_Update": {
+            "main": "./lib/actions/Apps_Update.js",
+            "title": "Updates the name or description of the application.",
+            "description": "Updates the name or description of the application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Apps_Update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Apps_ListEndpoints": {
+            "main": "./lib/actions/Apps_ListEndpoints.js",
+            "title": "Returns the available endpoint deployment regions and URLs.",
+            "description": "Returns the available endpoint deployment regions and URLs.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Apps_ListEndpoints.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Permissions_Delete": {
+            "main": "./lib/actions/Permissions_Delete.js",
+            "title": "Removes a user from the allowed list of users to access this LUIS application. Users are removed using their email address.",
+            "description": "Removes a user from the allowed list of users to access this LUIS application. Users are removed using their email address.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Permissions_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Permissions_List": {
+            "main": "./lib/actions/Permissions_List.js",
+            "title": "Gets the list of user emails that have permissions to access your application.",
+            "description": "Gets the list of user emails that have permissions to access your application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Permissions_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Permissions_Add": {
+            "main": "./lib/actions/Permissions_Add.js",
+            "title": "Adds a user to the allowed list of users to access this LUIS application. Users are added using their email address.",
+            "description": "Adds a user to the allowed list of users to access this LUIS application. Users are added using their email address.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Permissions_Add.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Permissions_Update": {
+            "main": "./lib/actions/Permissions_Update.js",
+            "title": "Replaces the current users access list with the one sent in the body. If an empty list is sent, all access to other users will be removed.",
+            "description": "Replaces the current users access list with the one sent in the body. If an empty list is sent, all access to other users will be removed.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Permissions_Update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Apps_Publish": {
+            "main": "./lib/actions/Apps_Publish.js",
+            "title": "Publishes a specific version of the application.",
+            "description": "Publishes a specific version of the application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Apps_Publish.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Apps_DownloadQueryLogs": {
+            "main": "./lib/actions/Apps_DownloadQueryLogs.js",
+            "title": "Gets the query logs of the past month for the application.",
+            "description": "Gets the query logs of the past month for the application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Apps_DownloadQueryLogs.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Apps_GetSettings": {
+            "main": "./lib/actions/Apps_GetSettings.js",
+            "title": "Get the application settings.",
+            "description": "Get the application settings.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Apps_GetSettings.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Apps_UpdateSettings": {
+            "main": "./lib/actions/Apps_UpdateSettings.js",
+            "title": "Updates the application settings.",
+            "description": "Updates the application settings.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Apps_UpdateSettings.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Versions_List": {
+            "main": "./lib/actions/Versions_List.js",
+            "title": "Gets the application versions info.",
+            "description": "Gets the application versions info.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Versions_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Versions_Import": {
+            "main": "./lib/actions/Versions_Import.js",
+            "title": "Imports a new version into a LUIS application.",
+            "description": "Imports a new version into a LUIS application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Versions_Import.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Versions_Delete": {
+            "main": "./lib/actions/Versions_Delete.js",
+            "title": "Deletes an application version.",
+            "description": "Deletes an application version.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Versions_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Versions_Get": {
+            "main": "./lib/actions/Versions_Get.js",
+            "title": "Gets the version info.",
+            "description": "Gets the version info.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Versions_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Versions_Update": {
+            "main": "./lib/actions/Versions_Update.js",
+            "title": "Updates the name or description of the application version.",
+            "description": "Updates the name or description of the application version.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Versions_Update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Versions_Clone": {
+            "main": "./lib/actions/Versions_Clone.js",
+            "title": "Creates a new version using the current snapshot of the selected application version.",
+            "description": "Creates a new version using the current snapshot of the selected application version.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Versions_Clone.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_ListClosedLists": {
+            "main": "./lib/actions/Model_ListClosedLists.js",
+            "title": "Gets information about the closedlist models.",
+            "description": "Gets information about the closedlist models.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_ListClosedLists.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_AddClosedList": {
+            "main": "./lib/actions/Model_AddClosedList.js",
+            "title": "Adds a closed list model to the application.",
+            "description": "Adds a closed list model to the application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_AddClosedList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_DeleteClosedList": {
+            "main": "./lib/actions/Model_DeleteClosedList.js",
+            "title": "Deletes a closed list model from the application.",
+            "description": "Deletes a closed list model from the application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_DeleteClosedList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_GetClosedList": {
+            "main": "./lib/actions/Model_GetClosedList.js",
+            "title": "Gets information of a closed list model.",
+            "description": "Gets information of a closed list model.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_GetClosedList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_PatchClosedList": {
+            "main": "./lib/actions/Model_PatchClosedList.js",
+            "title": "Adds a batch of sublists to an existing closedlist.",
+            "description": "Adds a batch of sublists to an existing closedlist.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_PatchClosedList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_UpdateClosedList": {
+            "main": "./lib/actions/Model_UpdateClosedList.js",
+            "title": "Updates the closed list model.",
+            "description": "Updates the closed list model.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_UpdateClosedList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_AddSubList": {
+            "main": "./lib/actions/Model_AddSubList.js",
+            "title": "Adds a list to an existing closed list.",
+            "description": "Adds a list to an existing closed list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_AddSubList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_DeleteSubList": {
+            "main": "./lib/actions/Model_DeleteSubList.js",
+            "title": "Deletes a sublist of a specific closed list model.",
+            "description": "Deletes a sublist of a specific closed list model.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_DeleteSubList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_UpdateSubList": {
+            "main": "./lib/actions/Model_UpdateSubList.js",
+            "title": "Updates one of the closed list's sublists.",
+            "description": "Updates one of the closed list's sublists.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_UpdateSubList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_ListCompositeEntities": {
+            "main": "./lib/actions/Model_ListCompositeEntities.js",
+            "title": "Gets information about the composite entity models.",
+            "description": "Gets information about the composite entity models.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_ListCompositeEntities.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_AddCompositeEntity": {
+            "main": "./lib/actions/Model_AddCompositeEntity.js",
+            "title": "Adds a composite entity extractor to the application.",
+            "description": "Adds a composite entity extractor to the application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_AddCompositeEntity.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_DeleteCompositeEntity": {
+            "main": "./lib/actions/Model_DeleteCompositeEntity.js",
+            "title": "Deletes a composite entity extractor from the application.",
+            "description": "Deletes a composite entity extractor from the application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_DeleteCompositeEntity.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_GetCompositeEntity": {
+            "main": "./lib/actions/Model_GetCompositeEntity.js",
+            "title": "Gets information about the composite entity model.",
+            "description": "Gets information about the composite entity model.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_GetCompositeEntity.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_UpdateCompositeEntity": {
+            "main": "./lib/actions/Model_UpdateCompositeEntity.js",
+            "title": "Updates the composite entity extractor.",
+            "description": "Updates the composite entity extractor.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_UpdateCompositeEntity.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_AddCompositeEntityChild": {
+            "main": "./lib/actions/Model_AddCompositeEntityChild.js",
+            "title": "Creates a single child in an existing composite entity model.",
+            "description": "Creates a single child in an existing composite entity model.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_AddCompositeEntityChild.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_DeleteCompositeEntityChild": {
+            "main": "./lib/actions/Model_DeleteCompositeEntityChild.js",
+            "title": "Deletes a composite entity extractor child from the application.",
+            "description": "Deletes a composite entity extractor child from the application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_DeleteCompositeEntityChild.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_AddCustomPrebuiltDomain": {
+            "main": "./lib/actions/Model_AddCustomPrebuiltDomain.js",
+            "title": "Adds a customizable prebuilt domain along with all of its models to this application.",
+            "description": "Adds a customizable prebuilt domain along with all of its models to this application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_AddCustomPrebuiltDomain.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_DeleteCustomPrebuiltDomain": {
+            "main": "./lib/actions/Model_DeleteCustomPrebuiltDomain.js",
+            "title": "Deletes a prebuilt domain's models from the application.",
+            "description": "Deletes a prebuilt domain's models from the application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_DeleteCustomPrebuiltDomain.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_ListCustomPrebuiltEntities": {
+            "main": "./lib/actions/Model_ListCustomPrebuiltEntities.js",
+            "title": "Gets all custom prebuilt entities information of this application.",
+            "description": "Gets all custom prebuilt entities information of this application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_ListCustomPrebuiltEntities.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_AddCustomPrebuiltEntity": {
+            "main": "./lib/actions/Model_AddCustomPrebuiltEntity.js",
+            "title": "Adds a custom prebuilt entity model to the application.",
+            "description": "Adds a custom prebuilt entity model to the application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_AddCustomPrebuiltEntity.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_ListCustomPrebuiltIntents": {
+            "main": "./lib/actions/Model_ListCustomPrebuiltIntents.js",
+            "title": "Gets custom prebuilt intents information of this application.",
+            "description": "Gets custom prebuilt intents information of this application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_ListCustomPrebuiltIntents.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_AddCustomPrebuiltIntent": {
+            "main": "./lib/actions/Model_AddCustomPrebuiltIntent.js",
+            "title": "Adds a custom prebuilt intent model to the application.",
+            "description": "Adds a custom prebuilt intent model to the application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_AddCustomPrebuiltIntent.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_ListCustomPrebuiltModels": {
+            "main": "./lib/actions/Model_ListCustomPrebuiltModels.js",
+            "title": "Gets all custom prebuilt models information of this application.",
+            "description": "Gets all custom prebuilt models information of this application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_ListCustomPrebuiltModels.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_ListEntities": {
+            "main": "./lib/actions/Model_ListEntities.js",
+            "title": "Gets information about the entity models.",
+            "description": "Gets information about the entity models.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_ListEntities.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_AddEntity": {
+            "main": "./lib/actions/Model_AddEntity.js",
+            "title": "Adds an entity extractor to the application.",
+            "description": "Adds an entity extractor to the application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_AddEntity.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_DeleteEntity": {
+            "main": "./lib/actions/Model_DeleteEntity.js",
+            "title": "Deletes an entity extractor from the application.",
+            "description": "Deletes an entity extractor from the application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_DeleteEntity.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_GetEntity": {
+            "main": "./lib/actions/Model_GetEntity.js",
+            "title": "Gets information about the entity model.",
+            "description": "Gets information about the entity model.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_GetEntity.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_UpdateEntity": {
+            "main": "./lib/actions/Model_UpdateEntity.js",
+            "title": "Updates the name of an entity extractor.",
+            "description": "Updates the name of an entity extractor.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_UpdateEntity.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_GetEntitySuggestions": {
+            "main": "./lib/actions/Model_GetEntitySuggestions.js",
+            "title": "Get suggestion examples that would improve the accuracy of the entity model.",
+            "description": "Get suggestion examples that would improve the accuracy of the entity model.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_GetEntitySuggestions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Examples_Add": {
+            "main": "./lib/actions/Examples_Add.js",
+            "title": "Adds a labeled example to the application.",
+            "description": "Adds a labeled example to the application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Examples_Add.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Examples_List": {
+            "main": "./lib/actions/Examples_List.js",
+            "title": "Returns examples to be reviewed.",
+            "description": "Returns examples to be reviewed.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Examples_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Examples_Batch": {
+            "main": "./lib/actions/Examples_Batch.js",
+            "title": "Adds a batch of labeled examples to the application.",
+            "description": "Adds a batch of labeled examples to the application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Examples_Batch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Examples_Delete": {
+            "main": "./lib/actions/Examples_Delete.js",
+            "title": "Deletes the labeled example with the specified ID.",
+            "description": "Deletes the labeled example with the specified ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Examples_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Versions_Export": {
+            "main": "./lib/actions/Versions_Export.js",
+            "title": "Exports a LUIS application to JSON format.",
+            "description": "Exports a LUIS application to JSON format.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Versions_Export.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Features_List": {
+            "main": "./lib/actions/Features_List.js",
+            "title": "Gets all the extraction features for the specified application version.",
+            "description": "Gets all the extraction features for the specified application version.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Features_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_ListHierarchicalEntities": {
+            "main": "./lib/actions/Model_ListHierarchicalEntities.js",
+            "title": "Gets information about the hierarchical entity models.",
+            "description": "Gets information about the hierarchical entity models.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_ListHierarchicalEntities.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_AddHierarchicalEntity": {
+            "main": "./lib/actions/Model_AddHierarchicalEntity.js",
+            "title": "Adds a hierarchical entity extractor to the application version.",
+            "description": "Adds a hierarchical entity extractor to the application version.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_AddHierarchicalEntity.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_DeleteHierarchicalEntity": {
+            "main": "./lib/actions/Model_DeleteHierarchicalEntity.js",
+            "title": "Deletes a hierarchical entity extractor from the application version.",
+            "description": "Deletes a hierarchical entity extractor from the application version.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_DeleteHierarchicalEntity.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_GetHierarchicalEntity": {
+            "main": "./lib/actions/Model_GetHierarchicalEntity.js",
+            "title": "Gets information about the hierarchical entity model.",
+            "description": "Gets information about the hierarchical entity model.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_GetHierarchicalEntity.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_UpdateHierarchicalEntity": {
+            "main": "./lib/actions/Model_UpdateHierarchicalEntity.js",
+            "title": "Updates the name and children of a hierarchical entity model.",
+            "description": "Updates the name and children of a hierarchical entity model.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_UpdateHierarchicalEntity.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_AddHierarchicalEntityChild": {
+            "main": "./lib/actions/Model_AddHierarchicalEntityChild.js",
+            "title": "Creates a single child in an existing hierarchical entity model.",
+            "description": "Creates a single child in an existing hierarchical entity model.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_AddHierarchicalEntityChild.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_DeleteHierarchicalEntityChild": {
+            "main": "./lib/actions/Model_DeleteHierarchicalEntityChild.js",
+            "title": "Deletes a hierarchical entity extractor child from the application.",
+            "description": "Deletes a hierarchical entity extractor child from the application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_DeleteHierarchicalEntityChild.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_GetHierarchicalEntityChild": {
+            "main": "./lib/actions/Model_GetHierarchicalEntityChild.js",
+            "title": "Gets information about the hierarchical entity child model.",
+            "description": "Gets information about the hierarchical entity child model.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_GetHierarchicalEntityChild.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_UpdateHierarchicalEntityChild": {
+            "main": "./lib/actions/Model_UpdateHierarchicalEntityChild.js",
+            "title": "Renames a single child in an existing hierarchical entity model.",
+            "description": "Renames a single child in an existing hierarchical entity model.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_UpdateHierarchicalEntityChild.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_ListIntents": {
+            "main": "./lib/actions/Model_ListIntents.js",
+            "title": "Gets information about the intent models.",
+            "description": "Gets information about the intent models.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_ListIntents.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_AddIntent": {
+            "main": "./lib/actions/Model_AddIntent.js",
+            "title": "Adds an intent classifier to the application.",
+            "description": "Adds an intent classifier to the application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_AddIntent.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_DeleteIntent": {
+            "main": "./lib/actions/Model_DeleteIntent.js",
+            "title": "Deletes an intent classifier from the application.",
+            "description": "Deletes an intent classifier from the application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_DeleteIntent.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_GetIntent": {
+            "main": "./lib/actions/Model_GetIntent.js",
+            "title": "Gets information about the intent model.",
+            "description": "Gets information about the intent model.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_GetIntent.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_UpdateIntent": {
+            "main": "./lib/actions/Model_UpdateIntent.js",
+            "title": "Updates the name of an intent classifier.",
+            "description": "Updates the name of an intent classifier.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_UpdateIntent.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_GetIntentSuggestions": {
+            "main": "./lib/actions/Model_GetIntentSuggestions.js",
+            "title": "Suggests examples that would improve the accuracy of the intent model.",
+            "description": "Suggests examples that would improve the accuracy of the intent model.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_GetIntentSuggestions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_ListPrebuiltEntities": {
+            "main": "./lib/actions/Model_ListPrebuiltEntities.js",
+            "title": "Gets all the available prebuilt entity extractors for the application.",
+            "description": "Gets all the available prebuilt entity extractors for the application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_ListPrebuiltEntities.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_ListModels": {
+            "main": "./lib/actions/Model_ListModels.js",
+            "title": "Gets information about the application version models.",
+            "description": "Gets information about the application version models.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_ListModels.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Features_GetApplicationVersionPatternFeatures": {
+            "main": "./lib/actions/Features_GetApplicationVersionPatternFeatures.js",
+            "title": "[DEPRECATED NOTICE: This operation will soon be removed] Gets all the pattern features.",
+            "description": "[DEPRECATED NOTICE: This operation will soon be removed] Gets all the pattern features.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Features_GetApplicationVersionPatternFeatures.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Features_CreatePatternFeature": {
+            "main": "./lib/actions/Features_CreatePatternFeature.js",
+            "title": "[DEPRECATED NOTICE: This operation will soon be removed] Creates a new pattern feature.",
+            "description": "[DEPRECATED NOTICE: This operation will soon be removed] Creates a new pattern feature.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Features_CreatePatternFeature.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Features_DeletePatternFeature": {
+            "main": "./lib/actions/Features_DeletePatternFeature.js",
+            "title": "[DEPRECATED NOTICE: This operation will soon be removed] Deletes a pattern feature.",
+            "description": "[DEPRECATED NOTICE: This operation will soon be removed] Deletes a pattern feature.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Features_DeletePatternFeature.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Features_GetPatternFeatureInfo": {
+            "main": "./lib/actions/Features_GetPatternFeatureInfo.js",
+            "title": "[DEPRECATED NOTICE: This operation will soon be removed] Gets the specified pattern feature's info.",
+            "description": "[DEPRECATED NOTICE: This operation will soon be removed] Gets the specified pattern feature's info.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Features_GetPatternFeatureInfo.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Features_UpdatePatternFeature": {
+            "main": "./lib/actions/Features_UpdatePatternFeature.js",
+            "title": "[DEPRECATED NOTICE: This operation will soon be removed] Updates the pattern, the name and the state of the pattern feature.",
+            "description": "[DEPRECATED NOTICE: This operation will soon be removed] Updates the pattern, the name and the state of the pattern feature.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Features_UpdatePatternFeature.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Features_ListPhraseLists": {
+            "main": "./lib/actions/Features_ListPhraseLists.js",
+            "title": "Gets all the phraselist features.",
+            "description": "Gets all the phraselist features.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Features_ListPhraseLists.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Features_AddPhraseList": {
+            "main": "./lib/actions/Features_AddPhraseList.js",
+            "title": "Creates a new phraselist feature.",
+            "description": "Creates a new phraselist feature.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Features_AddPhraseList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Features_DeletePhraseList": {
+            "main": "./lib/actions/Features_DeletePhraseList.js",
+            "title": "Deletes a phraselist feature.",
+            "description": "Deletes a phraselist feature.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Features_DeletePhraseList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Features_GetPhraseList": {
+            "main": "./lib/actions/Features_GetPhraseList.js",
+            "title": "Gets phraselist feature info.",
+            "description": "Gets phraselist feature info.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Features_GetPhraseList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Features_UpdatePhraseList": {
+            "main": "./lib/actions/Features_UpdatePhraseList.js",
+            "title": "Updates the phrases, the state and the name of the phraselist feature.",
+            "description": "Updates the phrases, the state and the name of the phraselist feature.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Features_UpdatePhraseList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_ListPrebuilts": {
+            "main": "./lib/actions/Model_ListPrebuilts.js",
+            "title": "Gets information about the prebuilt entity models.",
+            "description": "Gets information about the prebuilt entity models.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_ListPrebuilts.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_AddPrebuilt": {
+            "main": "./lib/actions/Model_AddPrebuilt.js",
+            "title": "Adds a list of prebuilt entity extractors to the application.",
+            "description": "Adds a list of prebuilt entity extractors to the application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_AddPrebuilt.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_DeletePrebuilt": {
+            "main": "./lib/actions/Model_DeletePrebuilt.js",
+            "title": "Deletes a prebuilt entity extractor from the application.",
+            "description": "Deletes a prebuilt entity extractor from the application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_DeletePrebuilt.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Model_GetPrebuilt": {
+            "main": "./lib/actions/Model_GetPrebuilt.js",
+            "title": "Gets information about the prebuilt entity model.",
+            "description": "Gets information about the prebuilt entity model.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Model_GetPrebuilt.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Versions_DeleteUnlabelledUtterance": {
+            "main": "./lib/actions/Versions_DeleteUnlabelledUtterance.js",
+            "title": "Deleted an unlabelled utterance.",
+            "description": "Deleted an unlabelled utterance.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Versions_DeleteUnlabelledUtterance.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Train_GetStatus": {
+            "main": "./lib/actions/Train_GetStatus.js",
+            "title": "Gets the training status of all models (intents and entities) for the specified LUIS app. You must call the train API to train the LUIS app before you call this API to get training status. \"appID\" specifies the LUIS app ID. \"versionId\" specifies the version number of the LUIS app. For example, \"0.1\".",
+            "description": "Gets the training status of all models (intents and entities) for the specified LUIS app. You must call the train API to train the LUIS app before you call this API to get training status. \"appID\" specifies the LUIS app ID. \"versionId\" specifies the version number of the LUIS app. For example, \"0.1\".",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Train_GetStatus.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Train_TrainVersion": {
+            "main": "./lib/actions/Train_TrainVersion.js",
+            "title": "Sends a training request for a version of a specified LUIS app. This POST request initiates a request asynchronously. To determine whether the training request is successful, submit a GET request to get training status. Note: The application version is not fully trained unless all the models (intents and entities) are trained successfully or are up to date. To verify training success, get the training status at least once after training is complete.",
+            "description": "Sends a training request for a version of a specified LUIS app. This POST request initiates a request asynchronously. To determine whether the training request is successful, submit a GET request to get training status. Note: The application version is not fully trained unless all the models (intents and entities) are trained successfully or are up to date. To verify training success, get the training status at least once after training is complete.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Train_TrainVersion.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

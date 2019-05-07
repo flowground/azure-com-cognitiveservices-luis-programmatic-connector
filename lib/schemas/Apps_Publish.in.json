@@ -1,0 +1,34 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        },
+        "requestBody": {
+            "description": "Object model for publishing a specific application version.",
+            "example": {
+                "isStaging": false,
+                "region": "westus",
+                "versionId": "0.1"
+            },
+            "properties": {
+                "isStaging": {
+                    "default": false,
+                    "description": "Indicates if the staging slot should be used, instead of the Production one.",
+                    "type": "boolean"
+                },
+                "region": {
+                    "description": "The target region that the application is published to.",
+                    "type": "string"
+                },
+                "versionId": {
+                    "description": "The version ID to publish.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

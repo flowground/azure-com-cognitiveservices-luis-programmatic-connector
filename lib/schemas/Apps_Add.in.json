@@ -1,0 +1,47 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "description": "Properties for creating a new LUIS Application",
+            "example": {
+                "culture": "en-us",
+                "description": "This is my first dummy application.",
+                "domain": "Comics",
+                "initialVersionId": "1.0",
+                "name": "MyFirstDummyApp",
+                "usageScenario": "IoT"
+            },
+            "properties": {
+                "culture": {
+                    "description": "The culture for the new application. It is the language that your app understands and speaks. E.g.: \"en-us\". Note: the culture cannot be changed after the app is created.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "Description of the new application. Optional.",
+                    "type": "string"
+                },
+                "domain": {
+                    "description": "The domain for the new application. Optional. E.g.: Comics.",
+                    "type": "string"
+                },
+                "initialVersionId": {
+                    "description": "The initial version ID. Optional. Default value is: \"0.1\"",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name for the new application.",
+                    "type": "string"
+                },
+                "usageScenario": {
+                    "description": "Defines the scenario for the new application. Optional. E.g.: IoT.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "culture",
+                "name"
+            ],
+            "type": "object"
+        }
+    }
+}

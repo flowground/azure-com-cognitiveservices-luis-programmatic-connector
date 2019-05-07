@@ -1,0 +1,28 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        },
+        "requestBody": {
+            "description": "Object model for updating the name or description of an application.",
+            "example": {
+                "description": "This is my first modified dummy description.",
+                "name": "MyFirstRenamedDummyAp"
+            },
+            "properties": {
+                "description": {
+                    "description": "The application's new description.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The application's new name.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

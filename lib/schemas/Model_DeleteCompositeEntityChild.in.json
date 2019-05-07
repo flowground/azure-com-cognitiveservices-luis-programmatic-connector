@@ -1,0 +1,24 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        },
+        "versionId": {
+            "required": true,
+            "type": "string"
+        },
+        "cEntityId": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        },
+        "cChildId": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        }
+    }
+}

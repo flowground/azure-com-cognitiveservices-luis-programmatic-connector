@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "culture": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

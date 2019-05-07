@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        },
+        "requestBody": {
+            "properties": {
+                "email": {
+                    "description": "The email address of the user.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

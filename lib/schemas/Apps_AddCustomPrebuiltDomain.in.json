@@ -1,0 +1,23 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "description": "A prebuilt domain create object containing the name and culture of the domain.",
+            "example": {
+                "culture": "en-US",
+                "domainName": "Web"
+            },
+            "properties": {
+                "culture": {
+                    "description": "The culture of the new domain.",
+                    "type": "string"
+                },
+                "domainName": {
+                    "description": "The domain name.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

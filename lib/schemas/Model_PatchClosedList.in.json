@@ -1,0 +1,66 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        },
+        "versionId": {
+            "required": true,
+            "type": "string"
+        },
+        "clEntityId": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        },
+        "requestBody": {
+            "description": "Object model for adding a batch of sublists to an existing closedlist.",
+            "example": {
+                "subLists": [
+                    {
+                        "canonicalForm": "Ohio",
+                        "list": [
+                            "Ohio",
+                            "OH"
+                        ]
+                    }
+                ]
+            },
+            "properties": {
+                "subLists": {
+                    "description": "Sublists to add.",
+                    "items": {
+                        "type": "object",
+                        "description": "Sublist of items for a Closed list.",
+                        "example": {
+                            "canonicalForm": "California",
+                            "list": [
+                                "California",
+                                "CA",
+                                "Calif.",
+                                "Cal."
+                            ]
+                        },
+                        "properties": {
+                            "canonicalForm": {
+                                "description": "The standard form that the list represents.",
+                                "type": "string"
+                            },
+                            "list": {
+                                "description": "List of synonym words.",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        }
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

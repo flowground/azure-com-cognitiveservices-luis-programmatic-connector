@@ -1,0 +1,41 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        },
+        "versionId": {
+            "required": true,
+            "type": "string"
+        },
+        "patternId": {
+            "required": true,
+            "type": "integer"
+        },
+        "requestBody": {
+            "description": "Object model for updating an existing Pattern feature.",
+            "example": {
+                "name": "ModifiedEmailPattern",
+                "pattern": "\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}\\b"
+            },
+            "properties": {
+                "isActive": {
+                    "default": true,
+                    "description": "Indicates if the Pattern feature is enabled.",
+                    "type": "boolean"
+                },
+                "name": {
+                    "description": "Name of the feature.",
+                    "type": "string"
+                },
+                "pattern": {
+                    "description": "The Regular Expression to match.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

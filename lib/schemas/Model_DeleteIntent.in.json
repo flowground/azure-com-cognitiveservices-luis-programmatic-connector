@@ -1,0 +1,23 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        },
+        "versionId": {
+            "required": true,
+            "type": "string"
+        },
+        "intentId": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        },
+        "deleteUtterances": {
+            "type": "boolean",
+            "default": false
+        }
+    }
+}

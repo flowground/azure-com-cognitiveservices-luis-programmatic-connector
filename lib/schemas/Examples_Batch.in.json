@@ -1,0 +1,99 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        },
+        "versionId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Object model for adding a batch of labeled examples.",
+            "example": [
+                {
+                    "entityLabels": [
+                        {
+                            "endCharIndex": 26,
+                            "entityName": "Location::From",
+                            "startCharIndex": 22
+                        },
+                        {
+                            "endCharIndex": 37,
+                            "entityName": "Location::To",
+                            "startCharIndex": 31
+                        }
+                    ],
+                    "intentName": "BookFlight",
+                    "text": "Book me a flight from Cairo to Redmond next Thursday"
+                },
+                {
+                    "entityLabels": [
+                        {
+                            "endCharIndex": 33,
+                            "entityName": "Location",
+                            "startCharIndex": 27
+                        }
+                    ],
+                    "intentName": "GetWeather",
+                    "text": "What's the weather like in Seattle?"
+                }
+            ],
+            "items": {
+                "type": "object",
+                "description": "A labeled example.",
+                "example": {
+                    "entityLabels": [
+                        {
+                            "endCharIndex": 34,
+                            "entityName": "Place",
+                            "startCharIndex": 21
+                        }
+                    ],
+                    "intentName": "WeatherInPlace",
+                    "text": "whats the weather in buenos aires?"
+                },
+                "properties": {
+                    "entityLabels": {
+                        "description": "The idenfied entities within the utterance.",
+                        "items": {
+                            "type": "object",
+                            "description": "Defines the entity type and position of the extracted entity within the example.",
+                            "properties": {
+                                "endCharIndex": {
+                                    "description": "The index within the utterance where the extracted entity ends.",
+                                    "type": "integer"
+                                },
+                                "entityName": {
+                                    "description": "The entity type.",
+                                    "type": "string"
+                                },
+                                "startCharIndex": {
+                                    "description": "The index within the utterance where the extracted entity starts.",
+                                    "type": "integer"
+                                }
+                            },
+                            "required": [
+                                "entityName",
+                                "startCharIndex",
+                                "endCharIndex"
+                            ]
+                        },
+                        "type": "array"
+                    },
+                    "intentName": {
+                        "description": "The idenfitied intent representing the utterance.",
+                        "type": "string"
+                    },
+                    "text": {
+                        "description": "The sample's utterance.",
+                        "type": "string"
+                    }
+                }
+            },
+            "type": "array"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        },
+        "versionId": {
+            "required": true,
+            "type": "string"
+        },
+        "skip": {
+            "type": "integer",
+            "minimum": 0,
+            "default": 0
+        },
+        "take": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 500,
+            "default": 100
+        }
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        },
+        "versionId": {
+            "required": true,
+            "type": "string"
+        },
+        "hEntityId": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        },
+        "requestBody": {
+            "description": "A Hierarchical Entity Extractor.",
+            "example": {
+                "children": [
+                    "Location::To"
+                ],
+                "name": "Reservation"
+            },
+            "properties": {
+                "children": {
+                    "description": "Child entities.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "name": {
+                    "description": "Entity name.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}
